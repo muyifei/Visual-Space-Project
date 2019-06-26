@@ -39,3 +39,9 @@
 
 ##  公网IP地址为47.111.115.187
 - 访问使用教程https://www.cnblogs.com/sunlxp/p/8006979.html
+
+##  Postgresql和php连接
+- 尝试更改/var/lib/pgsql/11/data/pg_hba.conf 加入host all all 0.0.0.0/0 trust
+- 尝试设置postgres用户的密码为vs19space
+- 尝试更改/var/lib/pgsql/11/data/pg_hba.conf 将host 本地 ident 改为md5，将外界IP访问也改为md5
+- 成功
