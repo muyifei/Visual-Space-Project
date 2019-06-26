@@ -38,3 +38,4 @@
 - 使用php7的php.ini-development替代原有的php.ini
 
 ##  公网IP地址为47.111.115.187
+- 访问使用教程https://www.cnblogs.com/sunlxp/p/8006979.html
