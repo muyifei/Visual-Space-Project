@@ -1,0 +1,86 @@
+<!DOCTYPE HTML> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>select</title>
+</head>
+
+<body>
+<?php
+	$corrent = $value = $Errmessage ="";
+	$name = $number = $gender = $birthday
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		switch ($_POST["type"])
+		{
+			case 1:
+				//检查生日日期格式
+				if (empty($_POST["input"]){
+					$Errmessage = "未输入信息";
+				}elseif (){
+					
+				}
+			case 2:
+				//检查性别输入格式
+			
+			case 3:
+				//检查姓名只有字母和空格
+				if (empty($_POST["input"]){
+					$Errmessage = "未输入信息";
+				}elseif (!preg_match("/^[a-zA-Z]*$/", $input){
+					$Errmessage = "姓名格式不正确";
+				}else{
+					$value = $_POST["input"]
+				}
+			case 4:
+				//检查学号输入格式
+				
+			
+			default:
+				$Errmessage = "未选择查询类型";
+		}
+	}
+	
+?>
+
+<form name="input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>“ method="post">
+	<select>
+		<option value = "name" onclick = "setName()">姓名</option>
+		<option value = "No" onclick = "setNo()">学号</option>
+		<option value = "gender" onclick = "setGender()">性别</option>
+		<option value = "birthday" onclick = "setBirthday()">生日</option>
+	</select>
+	<input type = "hidden" name  = "type" value = "">
+	<textarea rows = "1" cols = "20" name = "display1"> </textarea> : <input type="text" name="input"> 
+	<textarea rows = "1" cols = "20" name = "display2"> </textarea><br>
+	<input type="submit" value="查询">
+	<?php if ($Errmessage != "") {echo "Error: " + $Errmessage;} else { echo ""} ?>
+</form>
+</body>
+</html>
+
+<script>
+	function setBirthday(){
+		document.getElementByName("display1").innerHTML = "生日"；
+		document.getElementByName("display2").innerHTML = "输入格式：年月日，如19990605"；
+		document.getElementByName("type").value = 1;
+	}
+	function setGender(){
+		document.getElementByName("display1").innerHTML = "性别"；
+		document.getElementByName("display2").innerHTML = "输入男或女"；
+		document.getElementByName("type").value = 2;
+	}
+	function setName(){
+		document.getElementByName("display1").innerHTML = "姓名"；
+		document.getElementByName("display2").innerHTML = "输入英文，只有字母和空格，20个字符以内"；
+		document.getElementByName("type").value = 3;
+	}
+	function setNo(){
+		document.getElementByName("display1").innerHTML = "学号"；
+		document.getElementByName("display2").innerHTML = ""；
+		document.getElementByName("type").value = 4;
+	}
+	
+</script>
+
+// 查询页面，一个下拉选择按照什么方式查询，一个文本框输入查询内容
+// 下方显示输出，若有多个结果分行输出
