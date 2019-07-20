@@ -1,0 +1,13 @@
+<html>
+<head>
+	TJU visual space
+</head>
+
+<body>
+	<h2> 让我们测试使用数据库 </h2>
+	<p> 我们使用本地服务器下的test数据库，每个元组5个属性，序号、姓名、性别、学号、生日，其中序号是主键 </p>
+	<a href = "../select.php"> 查询数据库 </a>
+	<a href = "../insert.php"> 插入新数据 </a>
+	<a href = "../delete.php"> 删除记录   </a>
+</body>
+</html>
