@@ -16,12 +16,12 @@
     INSERT INTO student (number, gender, name, birthday)
     VALUES ($number, $gender, $name, $birthday);
 EOF;
-  $ret = pg_query($conn, $sql);
-  if(!$ret){
-   echo pg_last_error($conn);
-  } else {
-   echo "Insert successfully\n";
-  }
-  pg_close($conn);
+  	$ret = pg_query($conn, $sql);
+  	if(!$ret){
+   	echo pg_last_error($conn);
+  	} else {
+   	echo "Insert successfully\n";
+  	}
+ 	 pg_close($conn);
 	
 ?>
