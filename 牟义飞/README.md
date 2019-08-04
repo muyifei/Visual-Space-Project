@@ -45,3 +45,6 @@
 - 尝试设置postgres用户的密码为vs19space
 - 尝试更改/var/lib/pgsql/11/data/pg_hba.conf 将host 本地 ident 改为md5，将外界IP访问也改为md5
 - 成功
+
+##  添加中文
+- 添加成功，但是不能用网页端访问，原因可能是网页端的显示无法使用UTF-8，只能用英文，使用PUTTY即可解决，如何使用可以参考阿里云的连接帮助或问我
