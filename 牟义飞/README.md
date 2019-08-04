@@ -22,8 +22,7 @@
 - yum install php70w-pgsql
 - 设备名为postgresql-11
 - 经过调试可以运行postgresql
-- 运行方式：su - postgres
--          psql
+- 运行方式：su - postgres 然后 psql
 
 ## 三者的连接
 
