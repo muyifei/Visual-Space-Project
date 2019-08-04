@@ -1,6 +1,6 @@
 <?php
 	//connect
-	$conn = pg_connect("host=localhost port=5432 dbname=test user=postgres");
+	$conn = pg_connect("host=localhost port=5432 dbname=test user=postgres password=vs19space");
 	
 	if(!$conn){
 		echo "Error : Unable to open database\n";
@@ -14,7 +14,7 @@
 	
 	$sql =<<<EOF
     INSERT INTO student (number, gender, name, birthday)
-    VALUES ($number, $gender, $name, $birthday);
+    VALUES ('$number', $gender, '$name', '$birthday');
 EOF;
   	$ret = pg_query($conn, $sql);
   	if(!$ret){
