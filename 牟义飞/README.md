@@ -52,3 +52,5 @@
 
 ##  安装Python
 - 使用教程https://blog.csdn.net/u013214212/article/details/81540840
+- 安装了web.py
+- test.py在/usr/muyifei中，测试使用微信的接口
