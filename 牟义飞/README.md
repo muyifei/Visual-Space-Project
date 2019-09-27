@@ -54,3 +54,6 @@
 - 使用教程https://blog.csdn.net/u013214212/article/details/81540840
 - 安装了web.py
 - test.py在/usr/muyifei中，测试使用微信的接口
+
+##  使用python连通微信测试号
+- 成功，见/home/muyifei/main.py
