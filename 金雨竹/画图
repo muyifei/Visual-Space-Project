@@ -1,0 +1,44 @@
+<?php
+include("Untitled-5.php");
+class MyDB extends SQLite3
+   {
+      function __construct()
+      {
+         $this->open('test.db');
+      }
+   }
+   $db = new MyDB();
+   if(!$db){
+      echo $db->lastErrorMsg();
+   } else {
+      //echo "Opened database successfully\n";
+   }
+
+   $sql =<<<EOF
+      SELECT * from COMPANY;
+EOF;
+
+   $ret = $db->query($sql);
+   $dataArr=array();
+   $i=0;
+   while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
+       $dataArr[$i]= $row['SALARY'] ;
+	   $i++;
+   }
+   $labelArr=array();
+   $t=0;
+   while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
+       $labelArr[$t]= $row['NAME'] ;
+	   $t++;
+   }
+  // echo "Operation done successfully\n";
+   $db->close();
+
+
+//测试示例
+$title = "工资分布情况";
+ 
+$colorArr = array(0x99ff00, 0x312520, 0x801dae, 0x25f8cb, 0x808080, 0xa29b7c, 0xbce672, 0x44cef6, 0xc2ccd0, 0x8d4bbb, 0x2e4e7e, 0x50616d, 0x845a33, 0x622a1d, 0xff6666, 0xe4c6d0, 0x8c4356, 0xa29b7c, 0x30dff3, 0xfffbf0, 0xedd1d8, 0x801dae, 0xb0a4e3, 0x0099ff, 0x003371, 0x60281e, 0x8c4356, 0x4c221b, 0xff99ff, 0xffff99, 0x0aa344, 0x99ffff, 0xc0ebd7, 0x1bd1a5, 0xc32136, 0xff3333, 0x009999, 0xfff143, 0xf9906f, 0xbe002f, 0x8d4bbb, 0x815476); //对应颜色数组
+$result = drawPieImg($title, $dataArr, $labelArr, $colorArr);
+echo "<img src=" . $result . " mce_src=" . $result . ">";
+?>
