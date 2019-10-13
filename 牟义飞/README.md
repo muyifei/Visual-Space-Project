@@ -58,3 +58,6 @@
 ##  使用python连通微信测试号
 - 成功，见/home/muyifei/main.py
 - 接下来使用php代替python进行开发
+
+##  php遇到的问题
+- $GLOBALS["HTTP_RAW_POST_DATA"] 获取不到数据：改用file_get_contents('php://input')
