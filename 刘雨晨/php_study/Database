@@ -1,0 +1,5 @@
+<?php
+$str="host = localhost port=5432 dbname=mydata user=postgres password= a20110609";
+$link = pg_connect($str);
+
+?>
