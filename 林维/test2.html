@@ -6,6 +6,52 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
+	 <table border="1" align="center" bgcolor="F166E7">
+	<caption> 浏览器占有市场比例 </caption>
+        <tr>
+		    <th> 序号 </th>
+			<th> 名称 </th>
+			<th> 百分比 </th>
+        </tr>	    
+		<tr>
+		    <td> 1</td>
+			<td> IE </td>
+			<td> 11.6 </td>
+		</tr>
+		<tr>
+		    <td> 2</td>
+			<td> Firefox </td>
+			<td> 10.1 </td>
+		</tr>
+		<tr>
+		    <td> 3</td>
+			<td> Chrome </td>
+			<td> 67.2 </td>
+		</tr>
+		<tr>
+		    <td> 4</td>
+			<td> Edge </td>
+			<td> 4.4 </td>
+		</tr>
+		<tr>
+		    <td> 5</td>
+			<td> Safari </td>
+			<td> 3.6 </td>
+		</tr>
+		<tr>
+		    <td> 6</td>
+			<td> QQ </td>
+			<td> 1.6 </td>
+		</tr>
+		<tr>
+		    <td> 7</td>
+			<td> Sogou Explorer </td>
+			<td> 1.5 </td>
+		</tr>
+	</table>
+	</br>
+	</br>
+	</br>
 <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 <script language="JavaScript">
 $(document).ready(function() {  
@@ -36,25 +82,21 @@ $(document).ready(function() {
    var series= [{
       type: 'pie',
       name: 'Browser share',
-      var series = [{
-		        type: 'pie',
-				name: 'Browser share',
-				data: [
-				    ['IE', 11.15],
-					['Firefox', 9.68], 
-					{
-					    name: 'Chrome',
-						y: 64.67,
-						sliced: true,
-						selected: true
-					},
-					['Edge'  ,4.21],
-					['Safari' ,3.49],
-					['QQ' ,1.55],
-					['Sogou Explorer' ,1.49]
-					]
+      data: [
+         ['IE', 11.6],
+         ['Firefox', 10.1],
+         {
+            name: 'Chrome',
+            y: 67.2,
+            sliced: true,
+            selected: true
+         },
+         ['Edge',  4.4],
+         ['Safari',  3.6],
+         ['QQ',  1.6],
+		 ['Sogou Explorer' , 1.5]
+      ]
    }];     
-      
    var json = {};   
    json.chart = chart; 
    json.title = title;     
