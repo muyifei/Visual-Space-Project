@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<head>
+	<title>Echarts_test</title>
+	<script src="../javascript/echarts.min.js"></script>
+	<meta charset="utf-8">
+	<style>
+	body 
+	{
+	    background-image:url('../resources/space1.png');
+	    background-repeat:no-repeat;
+	    background-size: 1200px 1701px;
+	}
+</style>
+	</style>
+</head>
+
+<body>
+	<div id="main" style="width: 1000px;height:500px;">
+	</div>
+	<div id="pie" style="width: 1000px;height:500px;">
+	</div>
+	<div id="bar" style="width: 1000px;height:500px;">
+	</div>
+</body>
+
+<script type="text/javascript">
+	var myChart = echarts.init(document.getElementById('main'));
+	
+	var option = {
+		dataset:{
+			source: [
+				['register_date(month)','users'],
+				[201311,1   ],
+				[201312,5   ],
+				[201401,7   ],
+				[201402,3   ],
+				[201403,2   ],
+				[201404,9   ],
+				[201405,32  ],
+				[201406,14  ],
+				[201407,36  ],
+				[201408,47  ],
+				[201409,14  ],
+				[201410,22  ],
+				[201411,48  ],
+				[201412,29  ],
+				[201501,13  ],
+				[201502,12  ],
+				[201503,103 ],
+				[201504,71  ],
+				[201505,52  ],
+				[201506,69  ],
+				[201507,437 ],
+				[201508,282 ],
+				[201509,9206],
+				[201510,3446],
+				[201511,341 ],
+				[201512,225 ],
+				[201601,289 ],
+				[201602,237 ],
+				[201603,159 ],
+				[201604,397 ],
+				[201605,1005],
+				[201606,380 ],
+				[201607,240 ],
+				[201608,160 ],
+				[201609,156 ],
+				[201610,196 ],
+				[201611,141 ],
+				[201612,121 ],
+				[201701,85  ],
+				[201702,128 ],
+				[201703,152 ],
+				[201704,241 ],
+				[201705,134 ],
+				[201706,145 ],
+				[201707,103 ],
+				[201708,108 ],
+				[201709,119 ],
+				[201710,134 ],
+				[201711,123 ],
+				[201712,119 ],
+				[201801,108 ],
+				[201802,52  ],
+				[201803,184 ],
+				[201804,80  ],
+				[201805,96  ],
+				[201806,103 ],
+				[201807,81  ],
+				[201808,93  ],
+				[201809,111 ],
+				[201810,110 ],
+				[201811,92  ],
+				[201812,141 ],
+				[201901,108 ],
+				[201902,78  ],
+				[201903,301 ],
+				[201904,87  ],
+				[201905,97  ],
+				[201906,89  ],
+				[201907,97  ],
+				[201908,67  ],
+				[201909,100 ],
+				[201910,79  ],
+				[201911,49  ],
+			]
+		},
+        title: {
+            text: '平台注册用户数历史数据',
+			left: 'center',
+			textStyle:{
+				color: '#c23531',
+				fontSize:20
+			},
+				textShadowColor: 'rgba(0, 0, 0, 0.5)'
+			},
+			tooltip: {
+			trigger: 'axis'
+		},
+		xAxis:{
+			type: 'category',
+			nameTextStyle:{
+			color: '#ffde33'
+			},
+			axisLine:{
+			lineStyle:{
+				color: '#ffde33'
+			}
+			}
+		},
+        yAxis: {
+            nameTextStyle:{
+				color: '#ffde33'
+					},
+						axisLine:{
+							lineStyle:{
+								color: '#ffde33'
+				}
+			} 
+        },
+        toolbox: {
+            left: 'left',
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        dataZoom: [{
+            startValue: '201611'
+        }, {
+            type: 'inside'
+        }],
+        series: {
+            name: 'Linetest1',
+            type: 'line',
+			//symbol: 'none',
+			smooth: true,
+			//itemStyle : { normal: {label : {show: true}}},
+			color: {
+				type: 'linear',
+				x: 0,
+				y: 0,
+				x2: 0,
+				y2: 1,
+				colorStops: [{
+					offset: 0, color: 'orange' // 0% 处的颜色
+				}, {
+					offset: 1, color: 'red' // 100% 处的颜色
+				}],
+				global: false // 缺省为 false
+			}
+        }
+    }
+
+	myChart.setOption(option);
+    var piechart = echarts.init(document.getElementById('pie'));
+	var pieoption = {
+        dataset:{
+			sourceHeader: true,
+			source: [
+				['dataset_name',	'数据量_TB'                                                   ],
+				['北京-亚利桑那巡天项目',	37.86234276                                           ],
+				['郭守敬望远镜数据集',	29.73623784                                               ],
+				['南银冠U波段巡天数据集',	17.88280977                                           ],
+				['中国天文底片库',	15.6457604                                                    ],
+				['丽江2.4米望远镜数据集',	9.899351251                                           ],
+				['SAGE银河系巡天',	7.241046135                                                   ],
+				['兴隆85cm望远镜',	5.784007748                                                   ],
+				['SONG项目50BiN望远镜数据集',	5.74080591                                        ],
+				['全球伽玛暴与瞬变源观测系统第四号观测站(BOOTES-4)全自动望远镜数据集',	4.44563493],
+				['怀柔太阳射电望远镜数据集',	3.653482006                                       ],
+				['BATC大视场多色巡天数据集',	2.885134174                                       ],
+				['中国之星小望远镜阵(CSTAR)数据集',	2.601952909                                   ],
+				['南极AST3望远镜数据集',	1.737664715                                           ],
+				['兴隆80cm望远镜',	1.298826671                                                   ],
+				['兴隆60cm望远镜',	1.063215663                                                   ],
+				['兴隆2.16米望远镜数据集',	0.901848073                                           ],
+				['抚仙湖一米新真空红外太阳望远镜数据集',	0.146404698                           ],
+				['中国SONG项目1米望远镜',	0.03720874                                            ],
+				['怀柔太阳磁场望远镜数据集',	0.012452126                                       ]
+			]
+		},
+		tooltip: {//提示框，可以在全局也可以在
+            <!-- trigger: 'item',  //提示框的样式 -->
+            <!-- formatter: "{b} <br/>数据量_TB: {c}({d}%)", -->
+            <!-- color:'#000', //提示框的背景色 -->
+            <!-- textStyle:{ //提示的字体样式 -->
+                <!-- color:"white", -->
+            <!-- } -->
+        },
+	title:{
+	    text: '数据归档',
+			left: 'center',
+			textStyle:{
+				color: '#c23531',
+				fontSize:20
+			},
+			textShadowColor: 'rgba(0, 0, 0, 0.5)'
+	},
+        legend: {  //图例
+            orient: 'vertical',  //图例的布局，竖直    horizontal为水平
+            x: 'right',//图例显示在右边
+            textStyle:{    //图例文字的样式
+                color:'#3',  //文字颜色
+                fontSize:12    //文字大小
+            }
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie', //环形图的type和饼图相同
+                radius: ['50%', '70%'],//饼图的半径，第一个为内半径，第二个为外半径
+                //dimensions:['dataset_name',	'数据量_TB' ],
+                color:['#D1FBEF','#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                           '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+                           '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'],
+				avoidLabelOverlap: true,
+                label: {
+                    normal: {  //正常的样式
+                        show: true,
+                        position: 'left',
+						formatter: function(params){
+							var tmp1 = "";
+							tmp1 = "("+params.name+") ";
+							tmp1 += params.value[1]+" ";
+							tmp1 += "("+params.percent+"%)";
+							return tmp1;
+						},
+                    },
+                    emphasis: { //选中时候的样式
+                        show: true,
+                        textStyle: {
+                            fontSize: '20',
+                            fontWeight: 'bold'
+                        },
+						formatter: function(params){
+							var tmp1 = "";
+							tmp1 = "("+params.name+") ";
+							tmp1 += params.value[1]+" ";
+							tmp1 += "("+params.percent+"%)";
+							return tmp1;
+						},
+                    }
+                },  //提示文字
+                labelLine: {
+                    normal: {
+                        show: true
+                    }
+                },
+				tooltip: {//提示框，可以在全局也可以在
+					trigger: 'item',  //提示框的样式
+					formatter: function(params){
+						var tmp = "";
+						tmp = params.name + "<br>数据量_TB: ";
+						tmp += params.value[1];
+						tmp += "("+params.percent+"%)";
+						return tmp;
+					},
+					color:'#000', //提示框的背景色
+					textStyle:{ //提示的字体样式
+						color:"white",
+					}
+				},
+            }
+        ]
+    };
+	piechart.setOption(pieoption);
+
+	var barchart = echarts.init(document.getElementById('bar'));
+	var baroption = {
+		dataset:{
+			sourceHeader: true,
+			source:[
+				['数据集名称'	,'query_count'                                             ],
+				['LAMOST dr3'	,1179844                                                  ],
+				['LAMOST dr5'	,769291                                                   ],
+				['LAMOST dr2'	,604000                                                   ],
+				['Lijiang 2.4m Telescope Data'	,576888                               ],
+				['LAMOST dr4'	,463200                                                   ],
+				['Solar Broad Band Spectrometer',176548                               ],
+				['LAMOST dr1',	159596                                                   ],
+				['Chinese Small Telescope ARray Catalog',32649                        ],
+				['UCAC'	,19242                                                        ],
+				['Beijing-Arizona Sky Survey',18757                                    ],
+				['TwoMass'	,17285                                                    ],
+				['WISE'	,16990                                                        ],
+				['The South Galactic Cap U-band Sky Survey Data - Main Catalogue'	,14883],
+				['The South Galactic Cap U-band Sky Survey Data - Image'	,14364        ],
+				['LAMOST PDR'	,9471                                                     ],
+				['LAMOST dr6'	,6131                                                     ],
+				['Beijing-Arizona Sky Survey DR1 Images'	,3062                         ],
+				['Beijing-Arizona Sky Survey DR1 gradd'	,3052                         ],
+				['The South Galactic Cap U-band Sky Survey Data - ProperMotion'	,1793 ],
+				['SHAO156 2013'	,1509                                                 ],
+				['Antarctic AST3 Telescope Data - Survey'	,1482                         ],
+				['Antarctic AST3 Telescope Data - Light Curve'	,1353                 ],
+				['Antarctic AST3 Telescope Data - Image'	,1205                         ],
+				['Huairou SOS'	,544                                                  ],
+				['VLBI'	,472                                                          ],
+				['Beijing-Arizona Sky Survey DR3 Rawdata'	,313                          ],
+				['Xinglong 2.16m Telescope'	,291                                      ],
+				['Beijing-Arizona Sky Survey EDR'	,279                                  ],
+				['Antarctic AST3 Telescope Data'	,248                                  ],
+				['MMData SLFITS'	,237                                                  ],
+				['Beijing-Arizona Sky Survey DR2 Images'	,101                          ],
+				['Beijing-Arizona Sky Survey DR2 Stack'	,72                           ],
+				['Beijing-Arizona Sky Survey DR2 gradd'	,68                           ],
+				['MUSER'	,63                                                           ],
+				['LAMOST Quasar Catalog'	,50                                           ],
+				['Beijing-Arizona Sky Survey DR3 Images'	,46                           ],
+				['SHAO156 2014'	,20                                                   ],
+				['Beijing-Arizona Sky Survey DR3 Stack'	,17                           ],
+				['Others'	,13                                                           ],
+				['Beijing-Arizona Sky Survey DR3 Coadded Catalog'	,12                   ],
+				['NVST'	,12                                                           ],
+				['Beijing-Arizona Sky Survey DR1 Photometry',3                        ]
+			]
+		},
+		tooltip : {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow',
+                label: {
+                    show: true
+                }
+            }
+        },
+		label: {
+			show: false,
+			position: 'right',
+			color: 'auto'
+		},
+		textStyle:{
+			color: '#3FD0F9'
+		},
+		title:{
+			text: '数据库访问',
+			left: 'center',
+			textStyle:{
+				color: '#c23531',
+				fontSize:20
+			},
+			textShadowColor: 'rgba(0, 0, 0, 0.5)'
+		},
+		grid: {
+		    left: '0%',
+		    containLabel: true
+		},
+		xAxis: {
+			name: '查询次数',
+			type: 'value',
+			nameTextStyle: {
+				color: '#fe8104'
+			}
+		},
+		yAxis: {
+			name: '查询数据库',
+			type: 'category',
+			nameTextStyle: {
+				color: '#fe8104'
+			}
+		},
+		series: [
+			{
+				type: 'bar',
+				encode: {
+					// Map the "amount" column to X axis.
+					x: 'query_count',
+					// Map the "product" column to Y axis
+					y: '数据集名称'
+				},
+				color: 'orange'
+			}
+		]	
+	};
+	
+	barchart.setOption(baroption);
+</script>
+

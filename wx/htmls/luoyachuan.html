@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+ 
+	<head>
+		<meta charset="utf-8">
+		<style>
+			#header {
+				background-color:lightgray;
+				color:black;
+				text-align:left;
+				height: 80px;
+			}
+			#container {
+   				background-color: black;
+				background-image:url(bgpic2.png);
+				background-position:center;
+				background-repeat:no-repeat;
+			}
+		</style>
+	</head>
+
+	<body style="height: 100%; margin: 0" >
+		<div id="header">
+			<h1><a href="http://gallery.china-vo.org/">
+				<img src="topNavLogo.png" width="480" height="80"/></a>
+			</h1>
+		</div>
+		
+		<div id="container" style="height: 100%"></div>
+		<script type="text/javascript" src="echarts.min.js"></script>
+		<script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var app = {};
+			//环形图变量
+			var d1 = 0.012;
+			var d2 = 9.899;
+			var d3 = 1.738;
+			var d4 = 29.74;
+			var d5 = 2.885;
+
+			var d6 = 1.063;
+			var d7 = 3.653;
+			var d8 = 5.741;
+			var d9 = 5.784;
+			var d10 = 7.241;
+
+			var d11 = 0.146;
+			var d12 = 15.65;
+			var d13 = 0.037;
+			var d14 = 17.88;
+			var d15 = 0.092;
+
+			var d16 = 1.299;
+			var d17 = 2.602;
+			var d18 = 37.86;
+			var d19 = 4.446;
+			
+
+			app.title = '环形图';
+ 
+			var option = {
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b}: {c} ({d}%)"
+				},
+				legend: {
+					show: false,
+					orient: 'vertical',
+					left:'2%',
+					bottom:'10%',
+					data: ['怀柔太阳磁场望远镜数据集',
+						   '丽江2.4米望远镜数据集',
+						   '南极AST3望远镜数据集',
+						   '郭守敬望远镜数据集',
+						   'BATC大视场多色巡天数据集',
+						   '兴隆60cm望远镜',
+						   '怀柔太阳射电望远镜数据集',
+						   'SONG项目50BiN望远镜数据集',
+						   '兴隆85cm望远镜',
+						   'SAGE银河系巡天',
+						   '抚仙湖一米新真空红外太阳望远镜数据集',
+						   '中国天文底片库',
+						   '中国SONG项目1米望远镜',
+						   '南银冠U波段巡天数据集',
+						   '兴隆2.16米望远镜数据集',
+						   '兴隆80cm望远镜',
+						   '中国之星小望远镜阵\n(CSTAR)数据集',
+						   '北京-亚利桑那巡天项目',
+						   '全球伽马暴与瞬变源观测系统\n第四号观测站(BOOTES-4)全自动望远镜数据集'],
+					textStyle: {
+            			color: '#fff',
+            			fontSize: 10,
+            			fontWeight: 400,
+        			}
+				},
+				series: [{
+					name: '数据集名称',
+					type: 'pie',
+					radius : '55%',
+            		center: ['50%', '50%'],
+					label: {
+						fontSize: '15'
+					},
+					itemStyle: {
+                    	emphasis: {
+                    		shadowBlur: 10,
+                    		shadowOffsetX: 0,
+                    		shadowColor: 'rgba(0, 0, 0, 0.5)',
+                		}
+            		},
+					data: [{
+							value: d1,
+							name: '怀柔太阳磁场望远镜数据集'
+						},
+						{
+							value: d2,
+							name: '丽江2.4米望远镜数据集'
+						},
+						{
+							value: d3,
+							name: '南极AST3望远镜数据集'
+						},
+						{
+							value: d4,
+							name: '郭守敬望远镜数据集'
+						},
+						{
+							value: d5,
+							name: 'BATC大视场多色巡天数据集'
+						},
+						{
+							value: d6,
+							name: '兴隆60cm望远镜'
+						},
+						{
+							value: d7,
+							name: '怀柔太阳射电望远镜数据集'
+						},
+						{
+							value: d8,
+							name: 'SONG项目50BiN望远镜数据集'
+						},
+						{
+							value: d9,
+							name: '兴隆85cm望远镜'
+						},
+						{
+							value: d10,
+							name: 'SAGE银河系巡天'
+						},
+						{
+							value: d11,
+							name: '抚仙湖一米新真空红外太阳望远镜数据集'
+						},
+						{
+							value: d12,
+							name: '中国天文底片库'
+						},
+						{
+							value: d13,
+							name: '中国SONG项目1米望远镜'
+						},
+						{
+							value: d14,
+							name: '南银冠U波段巡天数据集'
+						},
+						{
+							value: d15,
+							name: '兴隆2.16米望远镜数据集'
+						},
+						{
+							value: d16,
+							name: '兴隆80cm望远镜'
+						},
+						{
+							value: d17,
+							name: '中国之星小望远镜阵\n(CSTAR)数据集'
+						},
+						{
+							value: d18,
+							name: '北京-亚利桑那巡天项目'
+						},
+						{
+							value: d19,
+							name: '全球伽马暴与瞬变源观测系统\n第四号观测站(BOOTES-4)全自动望远镜数据集'
+						}
+					]
+				}]
+			};
+			if(option && typeof option === "object") {
+				myChart.setOption(option, true);
+			}
+		</script>
+	</body>
+ 
+</html>

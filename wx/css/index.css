@@ -1,0 +1,287 @@
+body {
+    background: #f5f5f5;
+}
+
+main {
+    min-width: 320px;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main header {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+main header .navigation {
+    height: 40px;
+    background:lightgray;
+    min-width: 320px;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+main header .navigation .login {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color:black;
+
+}
+main header .navigation .register {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color:black;
+
+}
+main header .navigation .identity {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color:black;
+
+}
+
+main .banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+main .banner ul:first-child {
+
+    width: 1000%;
+
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+
+
+
+}
+
+main .banner ul:first-child li {
+    float: left;
+    width: 10%;
+
+
+}
+
+main .banner ul:first-child li a,
+main .banner ul:first-child li a img {
+    display: block;
+    width: 100%;
+
+
+}
+
+main .banner ul:last-child{
+    position: absolute;
+    width: 118px;
+    height: 6px;
+    bottom: 6px;
+    left:50%;
+    margin-left: -20px;
+}
+main .banner ul:last-child li{
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+     border: 1px solid #fff;
+    margin-left:10px;
+}
+main .banner ul:last-child li.cur,.cur{
+   background:#fff;
+}
+
+main .banner ul:last-child li:first-child{
+   
+    margin-left:0;
+}
+
+main nav{
+    width: 100%;
+}
+
+main nav ul{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    background-color: #fff;
+}
+
+main nav ul li{float: left;width:25%;}
+main nav ul li a{display: block;width:100%;}
+main nav ul li a img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+main nav ul li a p{
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding: 5px 0;
+}
+
+main .products{
+    width: 100%;
+    margin-top:10px;
+   
+    background: #fff;
+}
+
+main .products section{
+    width: 100%;
+    margin-top:20px;
+   
+   
+}
+
+
+main .products section.pro{
+   
+    margin-top:20px;
+
+}
+main .products section.pro h3{
+    font-size:16px;
+    color:#333;
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    height:32px;
+    line-height: 32px;
+}
+main .products section.pro h3::before{
+   content:"";
+   width:4px;
+   background-color: red;
+   height:20px;
+   display: block;
+   float: left;
+  margin-top:6px;
+   margin-right: 12px;
+
+}
+/*新闻*/
+.news {
+    background: #fff;
+}
+
+.news .list {
+    display: flex;
+    display: -webkit-flex;
+    padding: 10px 5px 5px;
+    margin: 0 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.news .list:last-child {
+    border: 0;
+}
+
+.list-right-img .left {
+    width: 60%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list-right-img .left .title {
+    font-weight: bold;
+    height: 30%;
+    font-size: 14px;
+}
+
+.list-right-img .left .content {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 16px;
+}
+
+.list-right-img .left .time {
+    font-size: 10px;
+    color: #bbb;
+}
+
+.list-right-img .right {
+    width: 40%;
+    margin-left: 10px;
+}
+
+.list-right-img .right img {
+    width: 100%;
+    height: 80px;
+}
+
+/* 登录界面 */
+.login_box {
+	width: 250px;
+  height: 300px;
+  background: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.avatar_box {
+	position: absolute;
+    padding: 10px;
+    width: 220px;
+    height: 80px;
+    border: 0px solid #eee;
+    border-radius: 2px;
+	top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+  }
+.login_form {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 0 20px;
+	box-sizing: border-box;
+
+}
+.btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#outbutton {
+  right: 0px;
+}
